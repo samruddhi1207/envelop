@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffe6ec;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Envelope */
+.envelope {
+    position: relative;
+    width: 350px;
+    height: 230px;
+    margin: auto;
+    background: #ff8fab;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Letter */
+.letter {
+    position: absolute;
+    width: 310px;
+    height: 200px;
+    background: white;
+
+    left: 20px;
+    top: 15px;
+
+    padding: 25px;
+    border-radius: 5px;
+
+    z-index: 2;
+
+    transition: 0.8s;
+}
+
+.letter h2 {
+    color: #ff4f79;
+    margin-bottom: 15px;
+}
+
+.letter p {
+    color: #555;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.love {
+    margin-top: 12px;
+    font-weight: bold;
+    color: #ff4f79 !important;
+}
+
+/* Top flap */
+.flap {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-left: 175px solid transparent;
+    border-right: 175px solid transparent;
+    border-top: 120px solid #ff6f91;
+
+    top: 0;
+    left: 0;
+
+    transform-origin: top;
+
+    transition: 0.8s;
+
+    z-index: 4;
+}
+
+/* Front of envelope */
+.front {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    border-left: 175px solid transparent;
+    border-right: 175px solid transparent;
+    border-bottom: 120px solid #ff8fab;
+
+    bottom: 0;
+    left: 0;
+
+    z-index: 3;
+}
+
+/* OPEN ENVELOPE */
+.envelope:hover .flap {
+    transform: rotateX(180deg);
+}
+
+/* Bring letter above envelope */
+.envelope:hover .letter {
+    transform: translateY(-140px);
+    z-index: 5;
+}
+
+/* Heading */
+h1 {
+    margin-top: 35px;
+    color: #ff4f79;
+    font-size: 35px;
+}
+
+.hint {
+    margin-top: 10px;
+    color: #777;
+    font-size: 14px;
+}
